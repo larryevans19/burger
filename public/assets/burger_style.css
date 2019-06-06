@@ -1,20 +1,25 @@
 li {
-    padding: 5px;
-    margin: 5px;
-    background: gold;
+  padding: 5px;
+  margin: 5px;
+  background: gold;
+ }
+  
+.label {
+  font-weight: bold;
   }
   
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+ 
+.form-group {
+  margin-bottom: 5px;
+}
+
+#burg {
+  min-width: 70%;
+  height: auto;
+}
 
