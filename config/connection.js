@@ -1,7 +1,12 @@
 // Setup code to connect Node to MySQL.
-var mysql = require("mysql");
+const mysql = require("mysql");
 
-var connection = mysql.createConnection({
+const connection;
+
+if(process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
   host: "192.168.99.100",
   port: 3306,
   user: "root",
