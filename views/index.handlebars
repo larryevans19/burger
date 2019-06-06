@@ -1,0 +1,112 @@
+<div class="container">
+
+  <h1>Eat Some Burgers!</h1>
+
+  <div class="row">
+
+    <div class="col-md">
+
+      <h2>Burgers ready to DEVOUR!</h2>
+
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li>
+          <p>
+            {{this.id}}. {{this.burger_name}}
+            <button data-id="{{this.id}}" class="devour-it">Devour It!</button>
+          </p>
+        </li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+
+    </div>
+
+    <div class="col-md">
+      <h2>Burgers that are DEVOURED!</h2>
+
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>
+          <p>
+            {{this.id}}. {{this.burger_name}}<br>
+            <strong>CRUSHED IT!<br>
+              BURRRRRRRRRRRP!</strong>
+          </p>
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <h2>Add a Burger</h2>
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="ca">Burger Name:</label>
+          <input type="text" id="ca" name="name">
+        </div>
+
+        <button type="submit">Add Burger</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Make sure we wait to attach our handlers until the DOM is fully loaded.
+  $(function () {
+    $(".create-form").on("submit", function (event) {
+      // Make sure to preventDefault on a submit event.
+      event.preventDefault();
+
+      var newBurger = {
+        name: $("#ca").val().trim(),
+        devoured: 0
+      };
+
+      // Send the POST request.
+      $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger
+      }).then(
+        function () {
+          console.log("Created New Burger!");
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    });
+
+    $(".devour-it").on("click", function (event) {
+      let id = $(this).data("id");
+      console.log("To Devour:", id)
+      let newDevour = 1;
+
+      let newDevourState = {
+        devoured: newDevour
+      };
+      console.log("NDS:", newDevourState);
+
+      // Send the PUT request.
+      $.ajax("/api/burgers/" + id, {
+        type: "put",
+        data: newDevourState
+      }).then(
+        function () {
+          console.log("Changed DEVOUR to", newDevour);
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    });
+  });
+</script>
