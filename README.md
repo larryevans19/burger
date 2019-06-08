@@ -1,6 +1,6 @@
 # Burgerlar
 
-![](public/img/eatme.png)
+![](public/img/fave.png)
 
 ## About
 
