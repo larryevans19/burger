@@ -1,3 +1,3 @@
 # Burgerlar
 
-![](public/images/eatme.png)
+![](public/img/eatme.png)
