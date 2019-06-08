@@ -14,7 +14,7 @@ As users are able to sample the burgers from their list of burgers to devour, th
 
 **Burgerlar** allows the user to manage their burger wish list until all of the burgers have dissappeared into their stomach!  Get eating!
 
-##Eat Some Burgers!##
+## Eat Some Burgers!##
 
 Bring your APPetite here:
 https://burgerlar.herokuapp.com/
