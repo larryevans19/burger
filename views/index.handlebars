@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
-      <h1>Eat Some Burgers!</h1>
+      <img src="/img/title.png" alt="title">
     </div>
   </div>
 
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
-      <h2>Add a Burger</h2>
+      <h2>Add a Burger You Want to Eat!</h2>
     </div>
 
   </div>
@@ -17,10 +17,11 @@
 
         <div class="d-flex justify-content-center form-group">
           <label for="ca">Burger Name:</label>
-          <input type="text" id="ca" name="name">
-        </div>
+          <input type="text" id="ca" name="name"></input>
 
-        <button type="submit">Add Burger</button>
+
+          <button type="submit">Add Burger</button>
+        </div>
       </form>
     </div>
   </div>
@@ -30,43 +31,39 @@
 
     <div class="col-4">
 
-      <h2>Burgers ready to DEVOUR!</h2>
+      <h2 class="head">Burgers ready to DEVOUR!</h2>
 
-      <ul>
+      <div>
         {{#each burgers}}
         {{#unless devoured}}
-        <li>
-          <p>
-            {{this.id}}. {{this.burger_name}}
-            <button data-id="{{this.id}}" class="devour-it">Devour It!</button>
-          </p>
-        </li>
+        <p class="list">
+          <img src="/img/icon.png" height="25px" width="auto"> {{this.burger_name}}
+          <button data-id="{{this.id}}" class="devour-it">Devour It!</button>
+        </p>
         {{/unless}}
         {{/each}}
-      </ul>
+      </div>
 
     </div>
 
     <div class="col-4 d-flex justify-content-center">
-      <img src="/img/burger.gif" id="burg">
+      <img src="/img/fave.png" id="burg">
 
     </div>
     <div class="col-4">
-      <h2>Burgers that are DEVOURED!</h2>
+      <h2 class="head">Burgers that are DEVOURED!</h2>
 
-      <ul>
+      <div>
         {{#each burgers}}
         {{#if devoured}}
-        <li>
-          <p>
-            {{this.id}}. {{this.burger_name}}<br>
-            <strong>CRUSHED IT!<br>
-              BURRRRRRRRRRRP!</strong>
-          </p>
-        </li>
+        <p class="list2">
+          <img src="/img/plate.png" height="25px" width="auto"> {{this.burger_name}}<br>
+          <img src="/img/mmm.gif"height="25px" width="auto"> <strong>CRUSHED IT! <img src="/img/cool.gif" height="25px" width="auto"> <br>
+          <img src="/img/burp.gif" height="25px" width="auto">  BURRRRRRRRRRRP!</strong> <img src="/img/happy.gif" height="25px" width="auto">
+        </p>
         {{/if}}
         {{/each}}
-      </ul>
+      </div>
 
     </div>
 

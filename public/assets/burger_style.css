@@ -1,25 +1,65 @@
+body {
+font-family: Georgia;
+background-color: rgb(240,164,162);
+}
+
+h1, h2 {
+  font-weight: bolder;
+}
+
 li {
+  list-style-type: none;
   padding: 5px;
   margin: 5px;
   background: gold;
  }
   
-.label {
+.list {
+  background: gold;
+  border: 3px solid green;
+  padding: .75rem;
+}
+
+.list2 {
+  background: white;
+  border: 3px solid green;
+  padding: .75rem;
+}
+
+label {
   font-weight: bold;
+  padding-top: .1rem;
+  font-size: large;
   }
-  
+
+input {
+  padding-left: .5rem;
+}
+
+.head {
+  text-align: center;
+}
+
+#ca {
+  margin: 0 .15rem 0 .15rem
+}
+
 .create-update-form {
   padding: 5px;
   margin: 5px;
   background: aqua;
 }
- 
+
+.devour-it {
+  float: right;
+  margin: -.2rem;
+}
+
 .form-group {
   margin-bottom: 5px;
 }
 
 #burg {
-  min-width: 70%;
-  height: auto;
+max-width: 115%;
+/* height: auto; */
 }
-
